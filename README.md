@@ -178,17 +178,36 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Bookstore API",
+      title: "📚 Bookstore REST API",
       version: "1.0.0",
-      description: "REST API for managing a bookstore with JWT auth",
+      description: "API for managing books and users with JWT authentication",
     },
-    servers: [{ url: "http://localhost:5001" }],
+    servers: [
+      {
+        url: "http://localhost:5000",
+      },
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+    security: [{ bearerAuth: [] }],
   },
-  apis: ["./routes/*.js"],
+  apis: ["./routes/*.js"], // Path to route files for annotations
 };
 
 const specs = swaggerJsdoc(options);
-module.exports = { swaggerUi, specs };
+
+module.exports = {
+  swaggerUi,
+  specs,
+};
+
 ```
 
 ---
@@ -214,10 +233,66 @@ Example for `authRoutes.js`:
  * /register:
  *   post:
  *     summary: Register a new user
- *     ...
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: User registered
+ *       400:
+ *         description: Email already exists
  */
-```
+router.post("/register", register);
 
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Log in and get a JWT token
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Token returned
+ *       401:
+ *         description: Invalid credentials
+ */
+router.post("/login", login);
+```
+---
+### 5: Start the server
+
+```node app.js```
+Then open:
+
+```http://localhost:5000/api-docs```
+
+You'll see a beautiful interactive Swagger UI 🎉
 ---
 
 ## 🧾 API Endpoints Summary
@@ -255,7 +330,7 @@ bookstore-api/
 ├── data/
 │   ├── users.json
 │   └── books.json
-├── swagger.js (optional)
+├── swagger.js
 ```
 
 ---
