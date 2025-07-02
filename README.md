@@ -57,7 +57,7 @@ node app.js
 You should see:
 
 ```bash
-Server running on http://localhost:5000
+Server running on http://localhost:5001
 ```
 
 ---
@@ -65,7 +65,7 @@ Server running on http://localhost:5000
 ### 6. Visit Swagger API Docs
 
 ```bash
-http://localhost:5000/api-docs
+http://localhost:5001/api-docs
 ```
 
 > If not configured yet, see the Swagger Setup section below.
@@ -77,7 +77,7 @@ http://localhost:5000/api-docs
 ### 1. Register a User
 
 - **Method**: `POST`
-- **URL**: `http://localhost:5000/register`
+- **URL**: `http://localhost:5001/register`
 - **Body** → `raw` → `JSON`:
 ```json
 {
@@ -91,7 +91,7 @@ http://localhost:5000/api-docs
 ### 2. Login
 
 - **Method**: `POST`
-- **URL**: `http://localhost:5000/login`
+- **URL**: `http://localhost:5001/login`
 - **Body**:
 ```json
 {
@@ -114,14 +114,14 @@ In all /books requests, add to **Authorization tab**:
 
 ### 4. Add a Book
 
-- **POST** `http://localhost:5000/books`
+- **POST** `http://localhost:5001/books`
 - **Body**:
 ```json
 {
   "title": "Atomic Habits",
   "author": "James Clear",
   "genre": "Self-help",
-  "publishedYear": 2018
+  "published Year": 2018
 }
 ```
 
@@ -129,19 +129,19 @@ In all /books requests, add to **Authorization tab**:
 
 ### 5. Get All Books
 
-- **GET** `http://localhost:5000/books`
+- **GET** `http://localhost:5001books`
 
 ---
 
 ### 6. Search Books by Genre
 
-- **GET** `http://localhost:5000/books/search?genre=Self-help`
+- **GET** `http://localhost:5001/books/search?genre=Self-help`
 
 ---
 
 ### 7. Update a Book
 
-- **PUT** `http://localhost:5000/books/:id`
+- **PUT** `http://localhost:5001/books/:id`
 - **Body**:
 ```json
 {
@@ -153,7 +153,7 @@ In all /books requests, add to **Authorization tab**:
 
 ### 8. Delete a Book
 
-- **DELETE** `http://localhost:5000/books/:id`
+- **DELETE** `http://localhost:5001/books/:id`
 
 ---
 
@@ -182,7 +182,7 @@ const options = {
       version: "1.0.0",
       description: "REST API for managing a bookstore with JWT auth",
     },
-    servers: [{ url: "http://localhost:5000" }],
+    servers: [{ url: "http://localhost:5001" }],
   },
   apis: ["./routes/*.js"],
 };
@@ -231,7 +231,7 @@ Example for `authRoutes.js`:
 | POST   | `/books`            | Add a new book                 | ✅            |
 | PUT    | `/books/:id`        | Update a book (creator only)   | ✅            |
 | DELETE | `/books/:id`        | Delete a book (creator only)   | ✅            |
-| GET    | `/books/search`     | Search books by genre          | ✅ or ❌       |
+| GET    | `/books/search`     | Search books by genre          | ✅ or ❌ if public|
 
 ---
 
