@@ -291,7 +291,7 @@ router.post("/login", login);
 
 Then open:
 
-```http://localhost:5000/api-docs```
+```http://localhost:5001/api-docs```
 
 You'll see a beautiful interactive Swagger UI 🎉
 
@@ -339,6 +339,3 @@ bookstore-api/
 
 ---
 
-## 📝 License
-
-Open-source project for learning and internship use.
