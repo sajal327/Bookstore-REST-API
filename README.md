@@ -288,11 +288,15 @@ router.post("/login", login);
 ### 5: Start the server
 
 ```node app.js```
+
 Then open:
 
 ```http://localhost:5000/api-docs```
 
 You'll see a beautiful interactive Swagger UI 🎉
+
+![Swagger](https://github.com/user-attachments/assets/da6eab23-2611-49c2-9cc2-bc9640ba8157)
+
 ---
 
 ## 🧾 API Endpoints Summary
