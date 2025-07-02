@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const authRoutes = require("./routes/authRoutes");
 const bookRoutes = require("./routes/bookRoutes");
+const { swaggerUi, specs } = require("./swagger");
 
 app.use(express.json());
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.get("/", (req, res) => {
   res.send("🚀 Welcome to the Bookstore API!");
