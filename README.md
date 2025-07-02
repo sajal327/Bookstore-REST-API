@@ -25,5 +25,15 @@ cd bookstore-api
 
 2. Install dependencies
 
-```bash
 npm install
+
+3. Set environment variables
+
+Create a .env file at the root and add:
+JWT_SECRET=yourSecretKeyHere
+
+4. Start the server
+
+node app.js
+
+
