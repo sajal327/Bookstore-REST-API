@@ -241,12 +241,21 @@ Example for `authRoutes.js`:
 bookstore-api/
 ├── app.js
 ├── .env
-├── swagger.js
 ├── controllers/
+│   ├── authController.js
+│   └── bookController.js
 ├── routes/
+│   ├── authRoutes.js
+│   └── bookRoutes.js
 ├── middlewares/
+│   ├── authMiddleware.js
+│   └── logger.js
 ├── utils/
+│   └── fileUtils.js
 ├── data/
+│   ├── users.json
+│   └── books.json
+├── swagger.js (optional)
 ```
 
 ---
