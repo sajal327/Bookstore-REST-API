@@ -1,0 +1,26 @@
+[
+  {
+    "id": "e250da43-7302-4804-a8a4-26c8d07979e4",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-help",
+    "publishedYear": 2018,
+    "userId": "97c2d39a-4ba2-4caa-8aff-e0484472e313"
+  },
+  {
+    "id": "5bd5c049-abc3-4521-91e6-41c0fadb2bee",
+    "title": "Think And Grow Rich",
+    "author": "Napoleon Hill",
+    "genre": "Success",
+    "publishedYear": 1937,
+    "userId": "97c2d39a-4ba2-4caa-8aff-e0484472e313"
+  },
+  {
+    "id": "f50326ff-de52-4ef2-ba90-4d668ccf2bea",
+    "title": "Light from Uncommon Stars",
+    "author": "Ryka Aoki",
+    "genre": "science fiction",
+    "publishedYear": 2021,
+    "userId": "97c2d39a-4ba2-4caa-8aff-e0484472e313"
+  }
+]
