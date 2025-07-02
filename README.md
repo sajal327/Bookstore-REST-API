@@ -187,7 +187,6 @@ bookstore-api/
 │   └── bookRoutes.js
 ├── middlewares/
 │   ├── authMiddleware.js
-│   └── logger.js
 ├── utils/
 │   └── fileUtils.js
 ├── data/
